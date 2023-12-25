@@ -1,4 +1,4 @@
 package com.example.flow.dtos;
 
-public class test {
+public class TaskDto {
 }
