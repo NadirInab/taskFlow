@@ -1,4 +1,4 @@
-package com.example.flow.dtos;
+package com.example.flow.dtosop;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;

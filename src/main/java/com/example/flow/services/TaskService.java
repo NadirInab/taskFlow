@@ -1,12 +1,9 @@
 package com.example.flow.services;
 
-import com.example.flow.dtos.UserDto;
 import com.example.flow.entities.Task;
-import com.example.flow.entities.User;
 import com.example.flow.entities.enums.TaskStatus;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Service

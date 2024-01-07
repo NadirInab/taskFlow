@@ -1,7 +1,5 @@
 package com.example.flow.services.impl;
 
-import com.example.flow.dtos.TaskDto;
-import com.example.flow.dtos.UserDto;
 import com.example.flow.entities.Tag;
 import com.example.flow.entities.Task;
 import com.example.flow.entities.TaskModifier;
@@ -17,21 +15,18 @@ import com.example.flow.services.TaskService;
 
 import com.example.flow.services.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
-import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class TaskServiceImpl implements TaskService {
 
-    private User authUser ;
+    private final User authUser ;
 
     private final TaskRepo taskRepo;
     private final UserService userService;

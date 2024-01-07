@@ -15,7 +15,7 @@ public class TagServiceImpl implements TagService {
 
     private final TagRepo tagRepository;
 
-    @Override
+ /*   @Override
     public List<Tag> findByNameIn(List<String> names) {
         List<String> tags = new ArrayList<>(names); // js, php , c
         List<Tag> existingTags = tagRepository.findByNameIn(names); // js, php
@@ -25,5 +25,40 @@ public class TagServiceImpl implements TagService {
         existingTags.forEach(tag -> tags.remove(tag.getName()));
         tags.forEach(name -> existingTags.add(tagRepository.save(Tag.builder().name(name).build())));
         return existingTags;
+    }*/
+
+    @Override
+    public List<Tag> findByNameIn(List<String> names) {
+        List<Tag> existingTags = new ArrayList<>(tagRepository.findByNameIn(names)); // Create a modifiable copy
+        List<String> tags = new ArrayList<>(names);
+
+        if (existingTags.size() == tags.size()) {
+            return existingTags;
+        }
+
+        existingTags.forEach(tag -> tags.remove(tag.getName()));
+        tags.forEach(name -> existingTags.add(tagRepository.save(Tag.builder().name(name).build())));
+
+        return existingTags;
+    }
+
+    @Override
+    public List<Tag> getAllTags() {
+        return tagRepository.findAll();
+    }
+
+    @Override
+    public List<Tag> findTagsByName(List<String> names) {
+        return tagRepository.findByNameIn(names);
+    }
+
+    @Override
+    public Tag addTag(Tag tag) {
+        return tagRepository.save(tag);
+    }
+
+    @Override
+    public void deleteTagById(Long tagId) {
+        tagRepository.deleteById(tagId);
     }
 }

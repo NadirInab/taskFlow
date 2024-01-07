@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.example.flow.mapper.mappers")
+@ComponentScan(basePackages = {"com.example.flow", "com.example.flow.mapper"})
 public class FlowApplication {
 
     public static void main(String[] args) {

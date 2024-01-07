@@ -1,4 +1,5 @@
-package com.example.flow.mapper.mappers;
+package com.example.flow.mapper;
+
 
 import com.example.flow.entities.Tag;
 import com.example.flow.mapper.dtos.TagDto;
@@ -12,4 +13,5 @@ public interface TagMapper {
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     Tag partialUpdate(TagDto tagDto, @MappingTarget Tag tag);
+
 }

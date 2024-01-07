@@ -2,8 +2,8 @@ package com.example.flow.controllers;
 
 import com.example.flow.entities.Task;
 import com.example.flow.entities.enums.TaskStatus;
+import com.example.flow.mapper.TaskMapper;
 import com.example.flow.mapper.dtos.TaskDto;
-import com.example.flow.mapper.mappers.TaskMapper;
 import com.example.flow.services.TaskService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
